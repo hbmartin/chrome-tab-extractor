@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Extractor",
+    "description": "Easily reduce tab clutter by moving matching tabs to a new winder after searching in the address bar.",
+    "version": "1.0.0",
+    "omnibox": {
+        "keyword": "ex"
+    },
+    "background": {
+        "service_worker": "TabExtractor.js"
+    },
+    "icons": {
+        "16": "icons/16.png",
+        "32": "icons/32.png",
+        "48": "icons/48.png",
+        "128": "icons/128.png"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}

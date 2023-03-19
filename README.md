@@ -1,4 +1,5 @@
-# Tab Extractor (Chrome Extension)
+# Tab Extractor (Chrome Extension)  <img align="right" src="icons/48.png" />
+
 
 ## Features
 
@@ -9,10 +10,10 @@
 
 ## Installation
 
-1. Press the <span style="color:white; background:#2c974b; border-radius:6px; padding: 0 .3em;">Code</span> button above and choose **Download ZIP**, then open the zip file
+1. Press the green **Code** button above and choose **Download ZIP**, then open the zip file
 2. Go to [chrome://extensions](chrome://extensions) in Google Chrome
 3. Turn on the Developer mode using the toggle in the upper right corner
-4. Click <span style="color:#1a73e8; font-weight: bold;">Load unpacked</span> button in the upper left corner 
+4. Click **Load unpacked** button in the upper left corner 
 5. Select the folder from step 1
 
 ## Contributing

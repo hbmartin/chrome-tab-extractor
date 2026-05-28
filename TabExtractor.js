@@ -45,9 +45,9 @@
               pinnedTabIDs.forEach((id) => {
                 chrome.tabs.update(id, { pinned: true });
               });
+              chrome.tabs.remove(newWindow.tabs[newWindow.tabs.length - 1].id);
             },
           );
-          chrome.tabs.remove(newWindow.tabs[newWindow.tabs.length - 1].id);
         });
       }
     });

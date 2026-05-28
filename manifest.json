@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Tab Extractor",
-    "description": "Easily reduce tab clutter by moving matching tabs to a new winder after searching in the address bar.",
+    "description": "Easily reduce tab clutter by moving matching tabs to a new window after searching in the address bar.",
     "version": "1.0.0",
     "omnibox": {
         "keyword": "ex"

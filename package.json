@@ -1,0 +1,12 @@
+{
+  "name": "chrome-tab-extractor",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Browser extension that moves matching tabs to a new window.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

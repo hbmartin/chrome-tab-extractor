@@ -15,6 +15,49 @@ if (typeof importScripts === "function") {
 
 const DOMAIN_MENU_ID = "extract-domain";
 
+const isThenable = (value) =>
+  value !== null &&
+  (typeof value === "object" || typeof value === "function") &&
+  typeof value.then === "function";
+
+const callWithOptionalCallback = (operation) =>
+  new Promise((resolve, reject) => {
+    let settled = false;
+    const settle = (error) => {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      if (error) {
+        reject(error);
+      } else {
+        resolve();
+      }
+    };
+    const callback = () => {
+      const message = api.runtime.lastError?.message;
+      settle(message ? new Error(message) : null);
+    };
+
+    try {
+      const result = operation(callback);
+      if (isThenable(result)) {
+        result.then(() => settle(null), settle);
+      }
+    } catch (error) {
+      settle(error);
+    }
+  });
+
+const removeAllContextMenus = () => {
+  if (api === globalThis.browser) {
+    return api.contextMenus.removeAll();
+  }
+  return callWithOptionalCallback((callback) =>
+    api.contextMenus.removeAll(callback),
+  );
+};
+
 /**
  * Query every tab in normal browser windows.
  * @returns {Promise<TabLike[]>}
@@ -72,7 +115,7 @@ api.runtime.onInstalled.addListener(async () => {
   try {
     // onInstalled also fires on update; clear any previously created menu
     // so re-creating it can't fail with a duplicate-id error.
-    await api.contextMenus.removeAll();
+    await removeAllContextMenus();
     api.contextMenus.create(
       {
         id: DOMAIN_MENU_ID,

@@ -16,7 +16,7 @@ A browser extension for Chrome and Firefox that reduces tab clutter by moving ma
 
 ### Chrome
 
-1. Press the green **Code** button above and choose **Download ZIP**, then unzip it (or grab the packaged zip from the [latest release](https://github.com/hbmartin/chrome-tab-extractor/releases))
+1. Press the green **Code** button above and choose **Download ZIP**, then unzip it (or grab the Chrome zip from the [latest release](https://github.com/hbmartin/chrome-tab-extractor/releases))
 2. Go to [chrome://extensions](chrome://extensions) in Google Chrome
 3. Turn on **Developer mode** using the toggle in the upper right corner
 4. Click the **Load unpacked** button in the upper left corner
@@ -24,7 +24,7 @@ A browser extension for Chrome and Firefox that reduces tab clutter by moving ma
 
 ### Firefox
 
-1. Download and unzip the extension as above (Firefox 115 or newer)
+1. Download and unzip the Firefox zip from the [latest release](https://github.com/hbmartin/chrome-tab-extractor/releases) (Firefox 115 or newer)
 2. Go to [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
 3. Click **Load Temporary Add-on…** and select the `manifest.json` file from step 1
 
@@ -32,8 +32,9 @@ A browser extension for Chrome and Firefox that reduces tab clutter by moving ma
 
 * The matching logic lives in [`matcher.js`](matcher.js) as pure functions; [`TabExtractor.js`](TabExtractor.js) wires it to the browser APIs.
 * Run the unit tests with `npm test` (requires Node.js 20+, no dependencies needed).
+* Build Chrome and Firefox packages with `npm run package`; browser-specific zips and unpacked folders are written to `dist/`.
 * This project is linted and formatted with [Biome](https://biomejs.dev/).
-* Tagging a release (`v*`) runs the [release workflow](.github/workflows/release.yml), which packages the extension zip and attaches it to a GitHub release.
+* Tagging a release (`v*`) runs the [release workflow](.github/workflows/release.yml), which packages Chrome and Firefox zips and attaches them to a GitHub release.
 
 ## Contributing
 

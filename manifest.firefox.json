@@ -7,7 +7,7 @@
         "keyword": "ex"
     },
     "background": {
-        "service_worker": "TabExtractor.js"
+        "scripts": ["matcher.js", "TabExtractor.js"]
     },
     "icons": {
         "16": "icons/16.png",
@@ -18,5 +18,11 @@
     "permissions": [
         "tabs",
         "contextMenus"
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "tab-extractor@hbmartin.github.io",
+            "strict_min_version": "115.0"
+        }
+    }
 }
